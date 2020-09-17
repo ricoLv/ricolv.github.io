@@ -4,17 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
-<script>
-    (function(){
-    	if(''){
-    	    if(prompt('please input password') !== ''){
-    	    	alert('error!');
-    	    	history.back();
-    	    }
-    	}
-    })();
-</script>
+<meta name="generator" content="Hexo 5.1.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -31,17 +21,17 @@
   </script>
 
   <meta name="description" content="操作系统讲到操作系统，有一些避不开的概念和名词，抛开历史故事，我们先从整个操作系统的硬件心脏CPU开始讲起。 指令集： RISC（reduced instruction setcomputer，精简指令集计算机）与CISC（Complex Instruction SetComputer,复杂指令集计算机）">
-<meta name="keywords" content="随想">
 <meta property="og:type" content="article">
 <meta property="og:title" content="现代智能操作系统随想">
 <meta property="og:url" content="http://www.iamlwl.me/2016/04/11/16041102/index.html">
 <meta property="og:site_name" content="Rico&#39;s Blog">
 <meta property="og:description" content="操作系统讲到操作系统，有一些避不开的概念和名词，抛开历史故事，我们先从整个操作系统的硬件心脏CPU开始讲起。 指令集： RISC（reduced instruction setcomputer，精简指令集计算机）与CISC（Complex Instruction SetComputer,复杂指令集计算机）">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-14T08:50:05.740Z">
+<meta property="og:locale">
+<meta property="article:published_time" content="2016-04-11T07:10:52.000Z">
+<meta property="article:modified_time" content="2020-03-14T08:50:05.740Z">
+<meta property="article:author" content="Rico">
+<meta property="article:tag" content="随想">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="现代智能操作系统随想">
-<meta name="twitter:description" content="操作系统讲到操作系统，有一些避不开的概念和名词，抛开历史故事，我们先从整个操作系统的硬件心脏CPU开始讲起。 指令集： RISC（reduced instruction setcomputer，精简指令集计算机）与CISC（Complex Instruction SetComputer,复杂指令集计算机）">
 
 <link rel="canonical" href="http://www.iamlwl.me/2016/04/11/16041102/">
 
@@ -230,7 +220,7 @@
 <p><strong>单内核（Monolithic kernel）：</strong><br>单内核也叫集中式操作系统。整个系统是一个大模块，可以被分为若干逻辑模块，即处理器管理、存储器管理、设备管理和文件管理，其模块间的交互是通过直接调用其他模块中的函数实现的。<br>单内核模型以提高系统执行效率为设计理念，因为整个系统是一个统一的内核，所以其内部调用效率很高。<br>单内核的缺点也正是由于其源代码是一个整体而造成的，通常各模块之间的界限并不特别清晰，模块间的调用比较随意，所以进行系统修改或升级时，往往“牵一发而动全身”，导致工作量加大，使其难于维护。<br>知名的单内核操作系统就是Linux了。</p>
 </blockquote>
 <blockquote>
-<p><strong>微内核（Microkernelkernel）：</strong><br>微内核是指把操作系统结构中的内存管理、设备管理、文件系统等高级服务功能尽可能地从内核中分离出来，变成几个独立的非内核模块，而在内核只保留少量最基本的功能，使内核变得简洁可靠，因此叫微内核。<br>微内核实现的基础是操作系统理论层面的逻辑功能划分。几大功能模块在理论上是相互独立的，形成比较明显的界限，其优点如下：<br>·     充分的模块化，可独立更换任一模块而不会影响其他模块，从而方便第三方开发、设计模块。<br>·     未被使用的模块功能不必运行，因而能大幅度减少系统的内存需求。<br>·     具有很高的可移植性，理论上讲只需要单独对各微内核部分进行移植修改即可。由于微内核的体积通常很小，而且互不影响，因此工作量很小。微内核大部分现代操作系统都在采用。包括Unix(Minix,BSD)，还有GNU一直想要开发出来的Hurd，BSD中有著名的Mac OS X。而微软的windows有传闻也是微内核架构。<br>Tanenbaum在1992年就此事同Linus展开了一场论述，具体的wiki地址如下：<br>[<a href="https://en.wikipedia.org/wiki/Tanenbaum%E2%80%93Torvalds_debate]" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Tanenbaum%E2%80%93Torvalds_debate]</a></p>
+<p><strong>微内核（Microkernelkernel）：</strong><br>微内核是指把操作系统结构中的内存管理、设备管理、文件系统等高级服务功能尽可能地从内核中分离出来，变成几个独立的非内核模块，而在内核只保留少量最基本的功能，使内核变得简洁可靠，因此叫微内核。<br>微内核实现的基础是操作系统理论层面的逻辑功能划分。几大功能模块在理论上是相互独立的，形成比较明显的界限，其优点如下：<br>·     充分的模块化，可独立更换任一模块而不会影响其他模块，从而方便第三方开发、设计模块。<br>·     未被使用的模块功能不必运行，因而能大幅度减少系统的内存需求。<br>·     具有很高的可移植性，理论上讲只需要单独对各微内核部分进行移植修改即可。由于微内核的体积通常很小，而且互不影响，因此工作量很小。微内核大部分现代操作系统都在采用。包括Unix(Minix,BSD)，还有GNU一直想要开发出来的Hurd，BSD中有著名的Mac OS X。而微软的windows有传闻也是微内核架构。<br>Tanenbaum在1992年就此事同Linus展开了一场论述，具体的wiki地址如下：<br>[<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Tanenbaum%E2%80%93Torvalds_debate]">https://en.wikipedia.org/wiki/Tanenbaum%E2%80%93Torvalds_debate]</a></p>
 </blockquote>
 <h3 id="本篇内容会谈到更多的是现代嵌入式系统软硬整合以及框架的思维，所以还会介绍下何为BPS："><a href="#本篇内容会谈到更多的是现代嵌入式系统软硬整合以及框架的思维，所以还会介绍下何为BPS：" class="headerlink" title="本篇内容会谈到更多的是现代嵌入式系统软硬整合以及框架的思维，所以还会介绍下何为BPS："></a>本篇内容会谈到更多的是现代嵌入式系统软硬整合以及框架的思维，所以还会介绍下何为BPS：</h3><blockquote>
 <p><strong>BSP：</strong><br>BSP是板级支持包，是介于主板硬件和操作系统之间的一层，应该说是属于操作系统的一部分,主要目的是为了支持操作系统，使之能够更好的运行于硬件主板。BSP是相对于操作系统而言的，不同的操作系统对应于不同定义形式的BSP,例如VxWorks的BSP和Linux的BSP相对于某一CPU来说尽管实现的功能一样，可是写法和接口定义是完全不同的，所以写BSP一定要按照该系统BSP的定义形式来写（BSP的编程过程大多数是在某一个成型的BSP模板上进行修改）。这样才能与上层OS保持正确的接口，良好的支持上层OS。<br>其实运行与PC机上的windows或linux系统也是有BSP的。只是PC机均采用统一的X86体系架构，这样一定操作系统（windows,linux..)的BSP相对x86架构是单一确定的，不需要做任何修改就可以很容易支持OS在x86上正常运行，所以在PC机上谈论BSP这个概念也没什么意义了。<br>而对嵌入式系统来说情况则完全不同，目前市场上多种结构的嵌入式CPU（RISC)并存(PPC,ARM,MIPS….),为了性能的需要，外围设备也会有不同的选择和定义。一个嵌入式操作系统针对不同的CPU,会有不同的BSP,即使同一种CPU,由于外设的一点差别（如外部扩展DRAM的大小，类型改变），BSP相应的部分也不一样。<br>所以根据硬件设计编写和修改BSP，保证系统正常的运行是非常重要的。<br>BSP和PC机主板上的BIOS区别很大，BIOS主要是负责在电脑开启时检测、初始化系统设备（设置栈指针，中断分配，内存初始化..）、装入操作系统并调度操作系统向硬件发出的指令，它的Firmware代码是在芯片生产过程中固化的，一般来说用户是无法修改。其实是为下载运行操作系统做准备，把操作系统由硬盘加载到内存，并传递一些硬件接口设置给系统。在OS正常运行后，BIOS的作用基本上也就完成了，这就是为什么更改BIOS一定要从新关机开机。<br> PC机BIOS的作用更象嵌入式系统中的Bootloader（最底层的引导软件,初始化主板的基本设置，为接收外部程序做硬件上的准备）。与Bootloader不同的是BIOS在装载OS系统的同时，还传递一些参数设置（中断端口定义，…),而Bootloader只是简单的装载系统。<br> BSP是和操作系统绑在一起运行在主板上的，尽管BSP的开始部分和BIOS所做的工作类似，可是大部分和BIOS不同，作用也完全不同。此外BSP还包含和系统有关的基本驱动（串口，网口…),此外程序员还可以编程修改BSP，在BSP中任意添加一些和系统无关的驱动或程序，甚至可以把上层开发的统统放到BSP中。<br> 而BIOS程序是用户不能更改，编译编程的，只能对参数进行修改设置。更不会包含一些基本的硬件驱动。<br><strong>BSP在嵌入式开发中的位置和作用：</strong><br> BSP开发处于整个嵌入式开发的前期，是后面系统上应用程序能够正常运行的保证。<br> 大概步骤如下：<br> 1.硬件主板研制，测试。<br> 2.操作系统的选定，BSP编程。<br> 3.上层应用程序的开发。<br> BSP部分在硬件和操作系统，上层应用程序之间。所以这就要求BSP程序员对硬件，软件和操作系统都要有一定的了解。这样才能做好BSP编程。</p>
@@ -254,7 +244,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/随想/" rel="tag"># 随想</a>
+              <a href="/tags/%E9%9A%8F%E6%83%B3/" rel="tag"># 随想</a>
           </div>
 
         
@@ -330,7 +320,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#操作系统"><span class="nav-number">1.</span> <span class="nav-text">操作系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#讲到操作系统，有一些避不开的概念和名词，抛开历史故事，我们先从整个操作系统的硬件心脏CPU开始讲起。"><span class="nav-number">1.1.</span> <span class="nav-text">讲到操作系统，有一些避不开的概念和名词，抛开历史故事，我们先从整个操作系统的硬件心脏CPU开始讲起。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#讲到操作系统内核，就得了解一下单内核和微内核之争"><span class="nav-number">1.2.</span> <span class="nav-text">讲到操作系统内核，就得了解一下单内核和微内核之争</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本篇内容会谈到更多的是现代嵌入式系统软硬整合以及框架的思维，所以还会介绍下何为BPS："><span class="nav-number">1.3.</span> <span class="nav-text">本篇内容会谈到更多的是现代嵌入式系统软硬整合以及框架的思维，所以还会介绍下何为BPS：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#讲完了上述应该知晓的几个简单的概念之后，我们再来谈谈Android和IOS"><span class="nav-number">1.4.</span> <span class="nav-text">讲完了上述应该知晓的几个简单的概念之后，我们再来谈谈Android和IOS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高性能IPC通讯框架"><span class="nav-number">1.5.</span> <span class="nav-text">高性能IPC通讯框架</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.</span> <span class="nav-text">操作系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%B2%E5%88%B0%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%8C%E6%9C%89%E4%B8%80%E4%BA%9B%E9%81%BF%E4%B8%8D%E5%BC%80%E7%9A%84%E6%A6%82%E5%BF%B5%E5%92%8C%E5%90%8D%E8%AF%8D%EF%BC%8C%E6%8A%9B%E5%BC%80%E5%8E%86%E5%8F%B2%E6%95%85%E4%BA%8B%EF%BC%8C%E6%88%91%E4%BB%AC%E5%85%88%E4%BB%8E%E6%95%B4%E4%B8%AA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%A1%AC%E4%BB%B6%E5%BF%83%E8%84%8FCPU%E5%BC%80%E5%A7%8B%E8%AE%B2%E8%B5%B7%E3%80%82"><span class="nav-number">1.1.</span> <span class="nav-text">讲到操作系统，有一些避不开的概念和名词，抛开历史故事，我们先从整个操作系统的硬件心脏CPU开始讲起。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%B2%E5%88%B0%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%86%85%E6%A0%B8%EF%BC%8C%E5%B0%B1%E5%BE%97%E4%BA%86%E8%A7%A3%E4%B8%80%E4%B8%8B%E5%8D%95%E5%86%85%E6%A0%B8%E5%92%8C%E5%BE%AE%E5%86%85%E6%A0%B8%E4%B9%8B%E4%BA%89"><span class="nav-number">1.2.</span> <span class="nav-text">讲到操作系统内核，就得了解一下单内核和微内核之争</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E7%AF%87%E5%86%85%E5%AE%B9%E4%BC%9A%E8%B0%88%E5%88%B0%E6%9B%B4%E5%A4%9A%E7%9A%84%E6%98%AF%E7%8E%B0%E4%BB%A3%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E8%BD%AF%E7%A1%AC%E6%95%B4%E5%90%88%E4%BB%A5%E5%8F%8A%E6%A1%86%E6%9E%B6%E7%9A%84%E6%80%9D%E7%BB%B4%EF%BC%8C%E6%89%80%E4%BB%A5%E8%BF%98%E4%BC%9A%E4%BB%8B%E7%BB%8D%E4%B8%8B%E4%BD%95%E4%B8%BABPS%EF%BC%9A"><span class="nav-number">1.3.</span> <span class="nav-text">本篇内容会谈到更多的是现代嵌入式系统软硬整合以及框架的思维，所以还会介绍下何为BPS：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%B2%E5%AE%8C%E4%BA%86%E4%B8%8A%E8%BF%B0%E5%BA%94%E8%AF%A5%E7%9F%A5%E6%99%93%E7%9A%84%E5%87%A0%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E6%A6%82%E5%BF%B5%E4%B9%8B%E5%90%8E%EF%BC%8C%E6%88%91%E4%BB%AC%E5%86%8D%E6%9D%A5%E8%B0%88%E8%B0%88Android%E5%92%8CIOS"><span class="nav-number">1.4.</span> <span class="nav-text">讲完了上述应该知晓的几个简单的概念之后，我们再来谈谈Android和IOS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E6%80%A7%E8%83%BDIPC%E9%80%9A%E8%AE%AF%E6%A1%86%E6%9E%B6"><span class="nav-number">1.5.</span> <span class="nav-text">高性能IPC通讯框架</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -394,7 +384,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">ricoLv</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v5.1.1
   </div>
   <span class="post-meta-divider">|</span>
   <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.1
@@ -511,9 +501,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
